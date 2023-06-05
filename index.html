@@ -16,26 +16,24 @@
             <!-- if then else -->
             <!-- ciclo for -->
             <h1 class="text-center p-3 mb-3">
-                Vue V-if
+                Vue V-for
             </h1>
 
-            <div>
-                <h2 v-if="isRaining" class="text-center text-danger fw-bold mb-3">
-                    It's raining man! Alleluja!
+            <div class="m-auto w-50">
+                <h2>
+                    Partecipants:
                 </h2>
-                <h2 v-else class="text-center text-success fw-bold mb-3">
-                    All good on the western front
-                </h2>
+                <ul>
+                    <li v-for="(partecipant, index) in partecipants">
+                        <span class="me-3">{{ index }}</span>
+                        <span class="me-3">{{ partecipant.name }}</span>
+                        <span>{{ partecipant.role }}</span>
+                    </li>
+                </ul>
             </div>
 
             <div class="text-center">
-                <div>
-                    <button class="btn btn-lg btn-primary mb-3" @click="changeWeather">
-                        Click me to change the weather!
-                    </button>
-                </div>
-                <pre class="fs-2">Is it raining?
-{{ isRaining }}</pre>
+                <p v-for="n in 5">{{ n }}</p>
             </div>
         </div>
 
